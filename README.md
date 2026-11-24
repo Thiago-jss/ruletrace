@@ -24,7 +24,27 @@ curl -sS http://127.0.0.1:8120/ask \
   -d '{"question":"Posso corrigir a inscrição EVT-042?","as_of":"2026-06-03"}'
 ```
 
+Trecho de uma execução real, para `EVT-042` em 3 de junho de 2026:
+
+> Sim, ainda é possível corrigir a inscrição EVT-042, pois a inscrição está em status "incompleta" e o prazo para correção de expositor é até 15 de junho de 2026, inclusive.
+>
+> Fonte: `retificacao-expositor.md` v2.0 — Art. 4 — Correção de expositor.
+
 ## Como funciona
+
+```mermaid
+flowchart LR
+    A[Markdown e PDF] --> B[Ingestão e chunking]
+    B --> C[(PostgreSQL e pgvector)]
+    D[Pergunta e data] --> E[Pipeline FastAPI]
+    E -->|Consulta tipada opcional| F[Inscrições fictícias]
+    E -->|Busca com vigência e categoria| C
+    E -->|Evidências sem ferramentas| G[Modelo local via LangChain]
+    G --> H[Validação das referências]
+    H --> I[Resposta ou abstenção]
+```
+
+Veja também as [fronteiras de arquitetura](docs/architecture.md).
 
 - **Ingestão** lê Markdown e PDFs textuais a partir de um manifesto local. Valida sobreposição de versões, caminhos e limites; mantém seção/página. Compara uma divisão por seção com janelas fixas sobrepostas dentro da mesma seção ou página.
 - **Indexação** preserva chunks, metadados, embeddings e índice textual GIN em PostgreSQL. A geração é identificada pelo conteúdo, parâmetros de chunking e digest do embedding; o ponteiro ativo só muda junto com o commit da geração completa. Reingerir o mesmo corpus reutiliza a geração.
@@ -35,6 +55,8 @@ curl -sS http://127.0.0.1:8120/ask \
 O backend usa FastAPI, LangChain Core, LangChain Text Splitters e a integração LangChain Ollama. O modelo é separado do índice, e a API roda com uma identidade PostgreSQL de leitura; o comando de ingestão usa uma identidade própria. As credenciais não são versionadas, o Postgres e Ollama não publicam portas e a API fica em loopback. Dados de inscrição são fictícios e a data da pergunta filtra **a regra**, não o histórico cadastral; a ferramenta retorna o status do fixture atual. Se atualizar o modelo de embeddings, rode a indexação novamente e reinicie a API para que ela reconheça a revisão ativa.
 
 ## Avaliação e testes
+
+Veja a [comparação medida entre busca textual, semântica e híbrida](docs/results.md).
 
 ```sh
 # Busca real + geração local; stdout é JSON.
