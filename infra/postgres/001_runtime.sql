@@ -1,0 +1,5 @@
+\getenv app_password RULETRACE_READER_PASSWORD
+CREATE ROLE ruletrace_reader LOGIN PASSWORD :'app_password';
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+GRANT USAGE ON SCHEMA public TO ruletrace_reader;
+ALTER DEFAULT PRIVILEGES FOR ROLE ruletrace IN SCHEMA public GRANT SELECT ON TABLES TO ruletrace_reader;

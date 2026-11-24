@@ -1,0 +1,71 @@
+name: ruletrace
+
+x-runtime: &runtime
+  build:
+    context: .
+    target: runtime
+x-models: &models
+  OLLAMA_BASE_URL: http://ollama:11434
+  OLLAMA_CHAT_MODEL: ${OLLAMA_CHAT_MODEL:-qwen3:4b-instruct-2507-q4_K_M}
+  OLLAMA_EMBED_MODEL: embeddinggemma
+
+services:
+  db:
+    image: pgvector/pgvector:pg17@sha256:b513c48566e4777cd3370451400000c78eda6a08131d68f4c31d4a76f27bd8fd
+    environment:
+      POSTGRES_USER: ruletrace
+      POSTGRES_PASSWORD: ${RULETRACE_DB_PASSWORD:?run python3 scripts/bootstrap.py}
+      POSTGRES_DB: ruletrace
+      RULETRACE_READER_PASSWORD: ${RULETRACE_READER_PASSWORD:?run python3 scripts/bootstrap.py}
+    healthcheck:
+      test: [CMD, pg_isready, -h, 127.0.0.1, -U, ruletrace, -d, ruletrace]
+      interval: 2s
+      timeout: 3s
+      retries: 25
+    volumes:
+      - db-runtime-data:/var/lib/postgresql/data
+      - ./infra/postgres:/docker-entrypoint-initdb.d:ro
+  ollama:
+    image: ollama/ollama@sha256:1cabd20e1762a7a8444bf4a7110b346d923cd77ab6c97c984434140638c913ec
+    environment:
+      OLLAMA_NUM_PARALLEL: '1'
+      OLLAMA_MAX_LOADED_MODELS: '1'
+      OLLAMA_NO_CLOUD: '1'
+    volumes:
+      - models:/root/.ollama
+    healthcheck:
+      test: [CMD, ollama, list]
+      interval: 3s
+      timeout: 5s
+      retries: 25
+  api:
+    <<: *runtime
+    environment:
+      <<: *models
+      RULETRACE_DATABASE_URL: postgresql://ruletrace_reader:${RULETRACE_READER_PASSWORD:?run python3 scripts/bootstrap.py}@db:5432/ruletrace
+    ports:
+      - '127.0.0.1:${RULETRACE_PORT:-8120}:8000'
+    depends_on:
+      db:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+  index:
+    <<: *runtime
+    profiles: [ops]
+    environment:
+      <<: *models
+      RULETRACE_DATABASE_URL: postgresql://ruletrace:${RULETRACE_DB_PASSWORD:?run python3 scripts/bootstrap.py}@db:5432/ruletrace
+    command: [python, -m, ruletrace, ingest]
+  checks:
+    profiles: [qa]
+    build:
+      context: .
+      target: checks
+    environment:
+      RULETRACE_TEST_PROJECT: ${COMPOSE_PROJECT_NAME}
+      RULETRACE_TEST_DATABASE_URL: postgresql://ruletrace:${RULETRACE_DB_PASSWORD:?run python3 scripts/bootstrap.py}@db:5432/ruletrace
+      RULETRACE_TEST_READER_URL: postgresql://ruletrace_reader:${RULETRACE_READER_PASSWORD:?run python3 scripts/bootstrap.py}@db:5432/ruletrace
+volumes:
+  db-runtime-data:
+  models:
