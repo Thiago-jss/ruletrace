@@ -1,0 +1,60 @@
+{
+  "sources": [
+    {
+      "rule_id": "correcao",
+      "version": "1.0",
+      "category": "expositor",
+      "starts_on": "2026-04-01",
+      "ends_on": "2026-06-01",
+      "file": "correcao-expositor-v1.md"
+    },
+    {
+      "rule_id": "correcao",
+      "version": "2.0",
+      "category": "expositor",
+      "starts_on": "2026-06-01",
+      "ends_on": null,
+      "file": "retificacao-expositor.md"
+    },
+    {
+      "rule_id": "correcao",
+      "version": "1.0",
+      "category": "oficineiro",
+      "starts_on": "2026-04-01",
+      "ends_on": null,
+      "file": "correcao-oficineiro.md"
+    },
+    {
+      "rule_id": "manual-operacional",
+      "version": "1.0",
+      "category": "geral",
+      "starts_on": "2026-04-01",
+      "ends_on": null,
+      "file": "manual-operacional.md"
+    },
+    {
+      "rule_id": "credenciamento",
+      "version": "1.0",
+      "category": "geral",
+      "starts_on": "2026-04-01",
+      "ends_on": null,
+      "file": "credenciamento.pdf"
+    },
+    {
+      "rule_id": "transporte",
+      "version": "1.0",
+      "category": "expositor",
+      "starts_on": "2026-04-01",
+      "ends_on": null,
+      "file": "transporte.md"
+    },
+    {
+      "rule_id": "apoio",
+      "version": "1.0",
+      "category": "geral",
+      "starts_on": "2026-04-01",
+      "ends_on": null,
+      "file": "apoio.md"
+    }
+  ]
+}

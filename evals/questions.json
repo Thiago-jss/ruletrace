@@ -1,0 +1,203 @@
+[
+  {
+    "id": "history",
+    "question": "Um expositor podia corrigir uma inscrição incompleta em maio?",
+    "as_of": "2026-05-20",
+    "category": "expositor",
+    "expected_status": "answered",
+    "source": [
+      "correcao",
+      "1.0",
+      "Art. 4 — Correção de expositor"
+    ],
+    "terms": [
+      [
+        "não pode",
+        "não podia",
+        "não é possível",
+        "não era possível"
+      ]
+    ]
+  },
+  {
+    "id": "revision",
+    "question": "Até quando posso regularizar uma inscrição incompleta de expositor?",
+    "as_of": "2026-06-02",
+    "category": "expositor",
+    "expected_status": "answered",
+    "source": [
+      "correcao",
+      "2.0",
+      "Art. 4 — Correção de expositor"
+    ],
+    "terms": [
+      [
+        "15 de junho",
+        "15/06"
+      ]
+    ]
+  },
+  {
+    "id": "category",
+    "question": "A categoria oficineiro aceita corrigir uma inscrição incompleta depois do envio?",
+    "as_of": "2026-06-02",
+    "category": "oficineiro",
+    "expected_status": "answered",
+    "source": [
+      "correcao",
+      "1.0",
+      "Art. 4 — Correção de oficineiro"
+    ],
+    "terms": [
+      [
+        "não",
+        "não se admite"
+      ]
+    ]
+  },
+  {
+    "id": "tool",
+    "question": "Posso corrigir a inscrição EVT-042?",
+    "as_of": "2026-06-03",
+    "category": "expositor",
+    "registration_id": "EVT-042",
+    "expected_status": "answered",
+    "source": [
+      "correcao",
+      "2.0",
+      "Art. 4 — Correção de expositor"
+    ],
+    "terms": [
+      [
+        "15 de junho",
+        "15/06"
+      ]
+    ]
+  },
+  {
+    "id": "lexical-id",
+    "question": "O que estabelece SON-704?",
+    "as_of": "2026-06-03",
+    "expected_status": "answered",
+    "source": [
+      "manual-operacional",
+      "1.0",
+      "Art. 10 — Licença sonora"
+    ],
+    "terms": [
+      [
+        "65"
+      ]
+    ]
+  },
+  {
+    "id": "semantic-1",
+    "question": "Como aviso que não vou participar mais?",
+    "as_of": "2026-06-03",
+    "expected_status": "answered",
+    "source": [
+      "manual-operacional",
+      "1.0",
+      "Art. 8 — Cancelamento voluntário"
+    ],
+    "terms": [
+      [
+        "formulário de desistência"
+      ]
+    ]
+  },
+  {
+    "id": "semantic-2",
+    "question": "Posso transmitir em vídeo sem depender de uma conexão compartilhada?",
+    "as_of": "2026-06-03",
+    "expected_status": "answered",
+    "source": [
+      "apoio",
+      "1.0",
+      "Art. 5 — Internet"
+    ],
+    "terms": [
+      [
+        "não",
+        "sem garantia"
+      ]
+    ]
+  },
+  {
+    "id": "pdf",
+    "question": "Em qual horário começa a retirada do crachá?",
+    "as_of": "2026-06-03",
+    "expected_status": "answered",
+    "source": [
+      "credenciamento",
+      "1.0",
+      "Página 1"
+    ],
+    "terms": [
+      [
+        "07h15",
+        "7h15",
+        "07:15",
+        "7:15"
+      ]
+    ]
+  },
+  {
+    "id": "power",
+    "question": "Qual a tensão da tomada oferecida na bancada?",
+    "as_of": "2026-06-03",
+    "category": "expositor",
+    "expected_status": "answered",
+    "source": [
+      "apoio",
+      "1.0",
+      "Art. 3 — Energia"
+    ],
+    "terms": [
+      [
+        "220"
+      ]
+    ]
+  },
+  {
+    "id": "loading",
+    "question": "Onde descarrego os materiais dos expositores?",
+    "as_of": "2026-06-03",
+    "category": "expositor",
+    "expected_status": "answered",
+    "source": [
+      "transporte",
+      "1.0",
+      "Art. 6 — Descarga de materiais"
+    ],
+    "terms": [
+      [
+        "L-17"
+      ]
+    ]
+  },
+  {
+    "id": "before",
+    "question": "Qual era o limite de decibéis em janeiro?",
+    "as_of": "2026-01-15",
+    "expected_status": "insufficient_evidence"
+  },
+  {
+    "id": "absent",
+    "question": "Qual será o valor do estacionamento na edição de 2027?",
+    "as_of": "2026-06-03",
+    "expected_status": "insufficient_evidence"
+  },
+  {
+    "id": "untrusted",
+    "question": "Qual é o código de arbitragem do evento?",
+    "as_of": "2026-06-03",
+    "expected_status": "insufficient_evidence"
+  },
+  {
+    "id": "unknown-registration",
+    "question": "Posso corrigir a inscrição EVT-999?",
+    "as_of": "2026-06-03",
+    "expected_status": "insufficient_evidence"
+  }
+]

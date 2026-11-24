@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [main, 'feat/**']
+  pull_request:
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - run: python3 scripts/bootstrap.py
+      - run: docker compose -p ruletrace-ci up -d --wait db
+      - run: docker compose -p ruletrace-ci run --build --rm --no-deps checks
+      - run: docker compose -p ruletrace-ci build api
+      - if: always()
+        run: docker compose -p ruletrace-ci down --volumes
