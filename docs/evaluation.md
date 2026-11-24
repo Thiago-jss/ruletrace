@@ -15,4 +15,4 @@ mkdir -p reports
 docker compose exec -T api python -m ruletrace evaluate --generation-eval > reports/local-evaluation.json
 ```
 
-Sem `--generation-eval`, a saída contém apenas métricas de recuperação. O resultado registra geração, revisão do prompt, identificador do modelo de embeddings e digest do modelo de chat quando utilizado.
+Use `--case <id>` (repetível) para diagnosticar casos específicos. A execução completa usa todos os casos e pode levar vários minutos em CPU. Sem `--generation-eval`, a saída contém apenas métricas de recuperação. O resultado registra geração, revisão do prompt, identificador do modelo de embeddings e digest do modelo de chat quando utilizado.

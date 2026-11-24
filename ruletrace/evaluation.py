@@ -1,5 +1,6 @@
 import json
 import statistics
+import sys
 from itertools import product
 from pathlib import Path
 from time import perf_counter
@@ -15,11 +16,16 @@ def source_id(hit: RetrievalHit) -> tuple[str, str, str]:
     return hit.rule_id, hit.version, hit.locator
 
 
-def evaluate(generation_eval: bool) -> None:
+def evaluate(generation_eval: bool, case_ids: list[str] | None = None) -> None:
     settings = Settings.local()
     service = build_service(settings)
     data_path = Path(__file__).resolve().parents[1] / "evals/questions.json"
     dataset = json.loads(data_path.read_text(encoding="utf-8"))
+    if case_ids:
+        unknown = set(case_ids) - {case["id"] for case in dataset}
+        if unknown:
+            raise ValueError("Unknown evaluation case: " + ", ".join(sorted(unknown)))
+        dataset = [case for case in dataset if case["id"] in case_ids]
     snapshot = service.store.current()
     k = 4
     retrieval = []
@@ -55,12 +61,20 @@ def evaluate(generation_eval: bool) -> None:
                 "chunking": strategy,
                 "k": k,
                 "count": len(items),
-                "recall_at_k": round(statistics.mean(row["rank"] is not None for row in items), 4),
+                "recall_at_k": round(
+                    statistics.mean(row["rank"] is not None for row in items) if items else 0, 4
+                ),
                 "mrr_at_k": round(
-                    statistics.mean(1 / row["rank"] if row["rank"] else 0 for row in items), 4
+                    statistics.mean(1 / row["rank"] if row["rank"] else 0 for row in items)
+                    if items
+                    else 0,
+                    4,
                 ),
                 "median_search_ms_excluding_embedding": round(
-                    statistics.median(row["search_ms_excluding_embedding"] for row in items), 2
+                    statistics.median(row["search_ms_excluding_embedding"] for row in items)
+                    if items
+                    else 0,
+                    2,
                 ),
             }
         )
@@ -69,6 +83,7 @@ def evaluate(generation_eval: bool) -> None:
         for case in dataset:
             inputs = {key: value for key, value in case.items() if key in Query.model_fields}
             query = Query(**inputs, top_k=k)
+            print(f"Evaluating answer: {case['id']}", file=sys.stderr, flush=True)
             response = service.answer(query)
             if response.generation_id and response.generation_id != snapshot[0]:
                 raise RuntimeError("Corpus changed during generation evaluation")

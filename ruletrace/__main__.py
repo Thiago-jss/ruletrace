@@ -40,13 +40,16 @@ def main() -> None:
     parser.add_argument("command", choices=["ingest", "evaluate"])
     parser.add_argument("--corpus", type=Path, default=Path("corpus"))
     parser.add_argument("--generation-eval", action="store_true")
+    parser.add_argument(
+        "--case", action="append", default=None, help="Run a named case; repeat to select a subset"
+    )
     args = parser.parse_args()
     if args.command == "ingest":
         ingest(args.corpus)
     else:
         from .evaluation import evaluate
 
-        evaluate(args.generation_eval)
+        evaluate(args.generation_eval, args.case)
 
 
 if __name__ == "__main__":
