@@ -9,11 +9,33 @@ from .answering import build_service
 from .config import Settings
 from .model_revisions import model_digest
 from .prompts import PROMPT_REVISION
-from .schema import Query, RetrievalHit
+from .schema import Answer, Query, RetrievalHit
 
 
 def source_id(hit: RetrievalHit) -> tuple[str, str, str]:
     return hit.rule_id, hit.version, hit.locator
+
+
+def score_answer(case: dict, response: Answer) -> dict:
+    expected_source = tuple(case.get("source", []))
+    source_match = any(source_id(hit) == expected_source for hit in response.citations)
+    # This is a lexical regression signal, not a judge of entailment.
+    if case["expected_status"] == "insufficient_evidence":
+        facts = not response.citations and response.status == "insufficient_evidence"
+    else:
+        facts = response.status == "answered" and all(
+            any(term.casefold() in response.answer.casefold() for term in alternatives)
+            for alternatives in case.get("terms", [])
+        )
+    return {
+        "case": case["id"],
+        "expected_status": case["expected_status"],
+        "expected_source": list(expected_source),
+        "status_match": response.status == case["expected_status"],
+        "expected_source_cited": source_match if expected_source else None,
+        "fact_proxy_match": facts,
+        "response": response.model_dump(mode="json"),
+    }
 
 
 def evaluate(generation_eval: bool, case_ids: list[str] | None = None) -> None:
@@ -87,26 +109,7 @@ def evaluate(generation_eval: bool, case_ids: list[str] | None = None) -> None:
             response = service.answer(query)
             if response.generation_id and response.generation_id != snapshot[0]:
                 raise RuntimeError("Corpus changed during generation evaluation")
-            expected_source = tuple(case.get("source", []))
-            source_match = any(source_id(hit) == expected_source for hit in response.citations)
-            # This is intentionally only a regression proxy, not a judge of entailment.
-            facts = all(
-                any(term.casefold() in response.answer.casefold() for term in alternatives)
-                for alternatives in case.get("terms", [])
-            )
-            if case["expected_status"] == "insufficient_evidence":
-                facts = not response.citations and response.status == "insufficient_evidence"
-            answers.append(
-                {
-                    "case": case["id"],
-                    "expected_status": case["expected_status"],
-                    "expected_source": list(expected_source),
-                    "status_match": response.status == case["expected_status"],
-                    "expected_source_cited": source_match if expected_source else None,
-                    "fact_proxy_match": facts,
-                    "response": response.model_dump(mode="json"),
-                }
-            )
+            answers.append(score_answer(case, response))
     print(
         json.dumps(
             {
@@ -117,6 +120,7 @@ def evaluate(generation_eval: bool, case_ids: list[str] | None = None) -> None:
                 if generation_eval
                 else None,
                 "prompt_revision": PROMPT_REVISION,
+                "answer_scoring_revision": "status-gated-lexical-v1",
                 "retrieval_summary": summaries,
                 "retrieval_per_case": retrieval,
                 "answers": answers,

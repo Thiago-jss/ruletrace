@@ -1,0 +1,2048 @@
+{
+  "generation": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+  "embedding_model": "embeddinggemma@85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+  "chat_model": "qwen3:4b-instruct-2507-q4_K_M",
+  "chat_model_digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "prompt_revision": "ruletrace-pt-v2",
+  "retrieval_summary": [
+    {
+      "mode": "lexical",
+      "chunking": "section",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 0.8667,
+      "median_search_ms_excluding_embedding": 10.01
+    },
+    {
+      "mode": "lexical",
+      "chunking": "window",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 0.825,
+      "median_search_ms_excluding_embedding": 8.83
+    },
+    {
+      "mode": "semantic",
+      "chunking": "section",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 1.0,
+      "median_search_ms_excluding_embedding": 10.91
+    },
+    {
+      "mode": "semantic",
+      "chunking": "window",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 0.95,
+      "median_search_ms_excluding_embedding": 10.76
+    },
+    {
+      "mode": "hybrid",
+      "chunking": "section",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 0.9,
+      "median_search_ms_excluding_embedding": 12.37
+    },
+    {
+      "mode": "hybrid",
+      "chunking": "window",
+      "k": 4,
+      "count": 10,
+      "recall_at_k": 1,
+      "mrr_at_k": 0.9333,
+      "median_search_ms_excluding_embedding": 12.34
+    }
+  ],
+  "retrieval_per_case": [
+    {
+      "case": "history",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 50.34
+    },
+    {
+      "case": "history",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.85
+    },
+    {
+      "case": "history",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ]
+      ],
+      "search_ms_excluding_embedding": 13.15
+    },
+    {
+      "case": "history",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.72
+    },
+    {
+      "case": "history",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 16.47
+    },
+    {
+      "case": "history",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 13.58
+    },
+    {
+      "case": "revision",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.53
+    },
+    {
+      "case": "revision",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ]
+      ],
+      "search_ms_excluding_embedding": 7.8
+    },
+    {
+      "case": "revision",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.32
+    },
+    {
+      "case": "revision",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ]
+      ],
+      "search_ms_excluding_embedding": 14.3
+    },
+    {
+      "case": "revision",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 16.51
+    },
+    {
+      "case": "revision",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ]
+      ],
+      "search_ms_excluding_embedding": 14.77
+    },
+    {
+      "case": "category",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.39
+    },
+    {
+      "case": "category",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.6
+    },
+    {
+      "case": "category",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.88
+    },
+    {
+      "case": "category",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.21
+    },
+    {
+      "case": "category",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 14.81
+    },
+    {
+      "case": "category",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "1.0",
+          "Art. 4 — Correção de oficineiro"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.41
+    },
+    {
+      "case": "tool",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 3,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ]
+      ],
+      "search_ms_excluding_embedding": 13.79
+    },
+    {
+      "case": "tool",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 2,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.87
+    },
+    {
+      "case": "tool",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.35
+    },
+    {
+      "case": "tool",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.86
+    },
+    {
+      "case": "tool",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 2,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.56
+    },
+    {
+      "case": "tool",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.81
+    },
+    {
+      "case": "lexical-id",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ]
+      ],
+      "search_ms_excluding_embedding": 7.86
+    },
+    {
+      "case": "lexical-id",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ]
+      ],
+      "search_ms_excluding_embedding": 6.07
+    },
+    {
+      "case": "lexical-id",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.46
+    },
+    {
+      "case": "lexical-id",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.78
+    },
+    {
+      "case": "lexical-id",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.44
+    },
+    {
+      "case": "lexical-id",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.52
+    },
+    {
+      "case": "semantic-1",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.02
+    },
+    {
+      "case": "semantic-1",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 2,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.12
+    },
+    {
+      "case": "semantic-1",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.78
+    },
+    {
+      "case": "semantic-1",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.66
+    },
+    {
+      "case": "semantic-1",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.79
+    },
+    {
+      "case": "semantic-1",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 1 — Envio da inscrição"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.8
+    },
+    {
+      "case": "semantic-2",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.71
+    },
+    {
+      "case": "semantic-2",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.87
+    },
+    {
+      "case": "semantic-2",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.95
+    },
+    {
+      "case": "semantic-2",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.95
+    },
+    {
+      "case": "semantic-2",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Nota — Material de teste não normativo"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.94
+    },
+    {
+      "case": "semantic-2",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.94
+    },
+    {
+      "case": "pdf",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.63
+    },
+    {
+      "case": "pdf",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.05
+    },
+    {
+      "case": "pdf",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.7
+    },
+    {
+      "case": "pdf",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.99
+    },
+    {
+      "case": "pdf",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.3
+    },
+    {
+      "case": "pdf",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "credenciamento",
+          "1.0",
+          "Página 1"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 8 — Cancelamento voluntário"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.43
+    },
+    {
+      "case": "power",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.25
+    },
+    {
+      "case": "power",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ]
+      ],
+      "search_ms_excluding_embedding": 7.17
+    },
+    {
+      "case": "power",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.02
+    },
+    {
+      "case": "power",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.39
+    },
+    {
+      "case": "power",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 15 — Atendimento presencial"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.87
+    },
+    {
+      "case": "power",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 1,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 5 — Internet"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 10 — Licença sonora"
+        ]
+      ],
+      "search_ms_excluding_embedding": 11.87
+    },
+    {
+      "case": "loading",
+      "mode": "lexical",
+      "chunking": "section",
+      "rank": 3,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.46
+    },
+    {
+      "case": "loading",
+      "mode": "lexical",
+      "chunking": "window",
+      "rank": 4,
+      "sources": [
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ]
+      ],
+      "search_ms_excluding_embedding": 8.79
+    },
+    {
+      "case": "loading",
+      "mode": "semantic",
+      "chunking": "section",
+      "rank": 1,
+      "sources": [
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ]
+      ],
+      "search_ms_excluding_embedding": 10.51
+    },
+    {
+      "case": "loading",
+      "mode": "semantic",
+      "chunking": "window",
+      "rank": 2,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ]
+      ],
+      "search_ms_excluding_embedding": 9.55
+    },
+    {
+      "case": "loading",
+      "mode": "hybrid",
+      "chunking": "section",
+      "rank": 2,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 12.08
+    },
+    {
+      "case": "loading",
+      "mode": "hybrid",
+      "chunking": "window",
+      "rank": 3,
+      "sources": [
+        [
+          "apoio",
+          "1.0",
+          "Art. 3 — Energia"
+        ],
+        [
+          "correcao",
+          "2.0",
+          "Art. 4 — Correção de expositor"
+        ],
+        [
+          "transporte",
+          "1.0",
+          "Art. 6 — Descarga de materiais"
+        ],
+        [
+          "manual-operacional",
+          "1.0",
+          "Art. 12 — Alimentação"
+        ]
+      ],
+      "search_ms_excluding_embedding": 14.33
+    }
+  ],
+  "answers": [
+    {
+      "case": "history",
+      "expected_status": "answered",
+      "expected_source": [
+        "correcao",
+        "1.0",
+        "Art. 4 — Correção de expositor"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "Não, um expositor não podia corrigir uma inscrição incompleta em maio, pois, de acordo com o Art. 4, uma inscrição incompleta não pode ser corrigida após o envio.",
+        "citations": [
+          {
+            "chunk_id": "9bae705c6db03f1d036ad278",
+            "rule_id": "correcao",
+            "version": "1.0",
+            "source": "correcao-expositor-v1.md",
+            "locator": "Art. 4 — Correção de expositor",
+            "content": "Para a categoria expositor, uma inscrição incompleta não pode ser corrigida após seu envio. O participante deve aguardar a abertura de nova janela de inscrição. Inscrição confirmada não está sujeita a esse procedimento."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 43.31,
+          "generation": 35162.96
+        }
+      }
+    },
+    {
+      "case": "revision",
+      "expected_status": "answered",
+      "expected_source": [
+        "correcao",
+        "2.0",
+        "Art. 4 — Correção de expositor"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "Até 15 de junho de 2026, inclusive.",
+        "citations": [
+          {
+            "chunk_id": "fbd1ac8f3b65b86b92f56993",
+            "rule_id": "correcao",
+            "version": "2.0",
+            "source": "retificacao-expositor.md",
+            "locator": "Art. 4 — Correção de expositor",
+            "content": "Para a categoria expositor, inscrições incompletas podem ser corrigidas até 15 de junho de 2026, inclusive, usando o formulário de regularização. Esta retificação aplica-se somente a expositores. Inscrições confirmadas não podem ser editadas."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 2997.78,
+          "generation": 43700.56
+        }
+      }
+    },
+    {
+      "case": "category",
+      "expected_status": "answered",
+      "expected_source": [
+        "correcao",
+        "1.0",
+        "Art. 4 — Correção de oficineiro"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "Não, a categoria oficineiro não aceita corrigir uma inscrição incompleta depois do envio.",
+        "citations": [
+          {
+            "chunk_id": "8e3748b20d6bda1cb5d5758c",
+            "rule_id": "correcao",
+            "version": "1.0",
+            "source": "correcao-oficineiro.md",
+            "locator": "Art. 4 — Correção de oficineiro",
+            "content": "Na categoria oficineiro, não se admite corrigir uma inscrição incompleta depois do envio. Documentação pendente poderá ser encaminhada somente numa nova inscrição. O formulário de regularização de expositores não se aplica aos oficineiros."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 2730.78,
+          "generation": 39058.21
+        }
+      }
+    },
+    {
+      "case": "tool",
+      "expected_status": "answered",
+      "expected_source": [
+        "correcao",
+        "2.0",
+        "Art. 4 — Correção de expositor"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "Sim, é possível corrigir a inscrição EVT-042, pois a inscrição está em status \"incompleta\" e, de acordo com o Art. 4, inscrições incompletas de expositor podem ser corrigidas até 15 de junho de 2026, inclusive, usando o formulário de regularização.",
+        "citations": [
+          {
+            "chunk_id": "fbd1ac8f3b65b86b92f56993",
+            "rule_id": "correcao",
+            "version": "2.0",
+            "source": "retificacao-expositor.md",
+            "locator": "Art. 4 — Correção de expositor",
+            "content": "Para a categoria expositor, inscrições incompletas podem ser corrigidas até 15 de junho de 2026, inclusive, usando o formulário de regularização. Esta retificação aplica-se somente a expositores. Inscrições confirmadas não podem ser editadas."
+          }
+        ],
+        "registration": {
+          "id": "EVT-042",
+          "category": "expositor",
+          "status": "incompleta"
+        },
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "tool": 11083.17,
+          "retrieval": 2785.34,
+          "generation": 50295.1
+        }
+      }
+    },
+    {
+      "case": "lexical-id",
+      "expected_status": "answered",
+      "expected_source": [
+        "manual-operacional",
+        "1.0",
+        "Art. 10 — Licença sonora"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "O SON-704 estabelece que o amplificador de áudio está sujeito a uma regra que permite até 65 decibéis no espaço de apresentação, medidos pela coordenação no local durante as atividades.",
+        "citations": [
+          {
+            "chunk_id": "5440cf93567b0aebb219f456",
+            "rule_id": "manual-operacional",
+            "version": "1.0",
+            "source": "manual-operacional.md",
+            "locator": "Art. 10 — Licença sonora",
+            "content": "O amplificador de áudio está sujeito à regra SON-704. São permitidos até 65 decibéis no espaço de apresentação, medidos pela coordenação no local durante as atividades."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 3082.34,
+          "generation": 45520.98
+        }
+      }
+    },
+    {
+      "case": "semantic-1",
+      "expected_status": "answered",
+      "expected_source": [
+        "manual-operacional",
+        "1.0",
+        "Art. 8 — Cancelamento voluntário"
+      ],
+      "status_match": false,
+      "expected_source_cited": false,
+      "fact_proxy_match": false,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "model_abstained",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 3038.58,
+          "generation": 35666.13
+        }
+      }
+    },
+    {
+      "case": "semantic-2",
+      "expected_status": "answered",
+      "expected_source": [
+        "apoio",
+        "1.0",
+        "Art. 5 — Internet"
+      ],
+      "status_match": false,
+      "expected_source_cited": false,
+      "fact_proxy_match": false,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "model_abstained",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 1514.37,
+          "generation": 33287.16
+        }
+      }
+    },
+    {
+      "case": "pdf",
+      "expected_status": "answered",
+      "expected_source": [
+        "credenciamento",
+        "1.0",
+        "Página 1"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "As 07h15",
+        "citations": [
+          {
+            "chunk_id": "24b7056fffc87be6825bdeed",
+            "rule_id": "credenciamento",
+            "version": "1.0",
+            "source": "credenciamento.pdf",
+            "locator": "Página 1",
+            "content": "Art. 9 - Credenciamento\nO crachá deve ser retirado na recepção principal mediante apresentação\ndo protocolo EVT e de documento com foto.\nA retirada do crachá abre às 07h15 no dia do festival."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 2752.75,
+          "generation": 34800.28
+        }
+      }
+    },
+    {
+      "case": "power",
+      "expected_status": "answered",
+      "expected_source": [
+        "apoio",
+        "1.0",
+        "Art. 3 — Energia"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "A tensão da tomada oferecida na bancada é de 220 V.",
+        "citations": [
+          {
+            "chunk_id": "bbb3f2a6489ea6de0d2ee06c",
+            "rule_id": "apoio",
+            "version": "1.0",
+            "source": "apoio.md",
+            "locator": "Art. 3 — Energia",
+            "content": "As bancadas oferecem uma tomada por expositor, com tensão de 220 V. Cada expositor é responsável por levar adaptadores compatíveis e informar o consumo dos equipamentos. A coordenação pode interromper a alimentação em caso de sobrecarga elétrica. Tomadas adicionais não são disponibilizadas no local. O equipamento deve permanecer desligado até a conferência da bancada. A equipe técnica identifica cada ponto com o código de sua respectiva bancada antes da abertura dos portões. Em caso de dúvida sobre a capacidade do circuito, consulte a equipe antes de ligar extensões."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 1519.35,
+          "generation": 42248.85
+        }
+      }
+    },
+    {
+      "case": "loading",
+      "expected_status": "answered",
+      "expected_source": [
+        "transporte",
+        "1.0",
+        "Art. 6 — Descarga de materiais"
+      ],
+      "status_match": true,
+      "expected_source_cited": true,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "answered",
+        "reason": null,
+        "answer": "Os materiais dos expositores podem ser descarregados pelo portão L-17, entre 06h30 e 08h00.",
+        "citations": [
+          {
+            "chunk_id": "17a29b5c45b50b64d4048569",
+            "rule_id": "transporte",
+            "version": "1.0",
+            "source": "transporte.md",
+            "locator": "Art. 6 — Descarga de materiais",
+            "content": "O acesso para descarga de expositores é pelo portão L-17, entre 06h30 e 08h00. Veículos que chegarem após 08h00 aguardam a próxima janela. Veículos não podem permanecer na área de descarga após a operação."
+          }
+        ],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 1551.25,
+          "generation": 46373.55
+        }
+      }
+    },
+    {
+      "case": "before",
+      "expected_status": "insufficient_evidence",
+      "expected_source": [],
+      "status_match": true,
+      "expected_source_cited": null,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "no_retrieved_evidence",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 1527.98
+        }
+      }
+    },
+    {
+      "case": "absent",
+      "expected_status": "insufficient_evidence",
+      "expected_source": [],
+      "status_match": true,
+      "expected_source_cited": null,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "model_abstained",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 86.06,
+          "generation": 32787.72
+        }
+      }
+    },
+    {
+      "case": "untrusted",
+      "expected_status": "insufficient_evidence",
+      "expected_source": [],
+      "status_match": true,
+      "expected_source_cited": null,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "model_abstained",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": "c54639225de9295f7cef4b82285704b92be992d8f4d4ec1c40454383d0eac6d9",
+        "timings_ms": {
+          "retrieval": 1614.83,
+          "generation": 33967.23
+        }
+      }
+    },
+    {
+      "case": "unknown-registration",
+      "expected_status": "insufficient_evidence",
+      "expected_source": [],
+      "status_match": true,
+      "expected_source_cited": null,
+      "fact_proxy_match": true,
+      "response": {
+        "status": "insufficient_evidence",
+        "reason": "registration_not_found",
+        "answer": "Não há evidência suficiente para responder a esta pergunta.",
+        "citations": [],
+        "registration": null,
+        "generation_id": null,
+        "timings_ms": {
+          "tool": 11739.56
+        }
+      }
+    }
+  ],
+  "answer_scoring_revision": "status-gated-lexical-v1"
+}
